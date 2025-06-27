@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation , easeOut } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 
@@ -39,7 +39,7 @@ const Purpose = () => {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeOut },
     },
   };
 

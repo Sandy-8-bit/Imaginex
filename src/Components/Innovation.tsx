@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation,easeOut } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 
@@ -50,7 +50,7 @@ const InnovationCard = ({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
         delay: index * 0.2,
       },
     },
