@@ -55,7 +55,7 @@ const Innovators = () => {
         animate={headingControls}
         transition={{ duration: 0.6 }}
       >
-<p className="font-medium text-[20px] sm:text-[32px] lg:text-[48px] anybody bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+<p className="font-medium text-[20px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
   Empowering the Innovators of <br /> Tomorrow
 </p>
 

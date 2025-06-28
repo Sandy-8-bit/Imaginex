@@ -33,7 +33,7 @@ const Venture = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] anybody bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
           From Vision to Victory
         </p>
       </motion.div>

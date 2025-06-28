@@ -96,7 +96,7 @@ const Innovation = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] anybody bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
           Empowering Humanity through Innovation and Technology (M-HIT)
         </p>
       </motion.div>
