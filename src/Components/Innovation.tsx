@@ -62,6 +62,7 @@ const InnovationCard = ({
       initial="hidden"
       animate={controls}
       variants={variants}
+      
       className="w-full md:w-full lg:w-[31%] flex flex-col  bg-gradient-to-b from-[#0E0A0F] to-[#211824] p-6 rounded-lg"
     >
       <div className="flex items-center mb-4">
@@ -87,7 +88,7 @@ const InnovationCard = ({
 
 const Innovation = () => {
   return (
-    <div className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center">
+    <div id="pillars" className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}

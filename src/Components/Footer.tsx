@@ -1,4 +1,19 @@
+import { useState } from "react";
+import ContactUsPopup from "./Popup/ContactUs";
+
 const Footer = () => {
+  function scrollToElementByIdWithOffset(id:any, offset = 100) {
+
+  const element = document.getElementById(id);
+  if (element) {
+    const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
+const[isOpen, setIsOpen] = useState(false);
+
+
   return (
     <footer className="bg-[#0E0A0F] text-white border-t border-[#2E2132]">
       <div className="flex flex-col md:flex-row justify-between gap-10 px-5 sm:px-20 py-10">
@@ -12,14 +27,17 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <div className="flex-1">
-          <ul className="flex flex-col gap-2 md:items-center">
-            {["Home", "About", "Pillars", "Contact"].map((link) => (
+          <ul className="flex cursor-pointer flex-col gap-2 md:items-center">
+            {["Home", "About", "Pillars", ].map((link) => (
               <li key={link}>
-                <a href={`/${link.toLowerCase()}`} className="hover:text-purple-400 transition-colors duration-200">
+                <a  onClick={() => scrollToElementByIdWithOffset(link.toLowerCase())} className="hover:text-purple-400 transition-colors duration-200">
                   {link}
                 </a>
+               
               </li>
+              
             ))}
+            <li className="cursor-pointer hover:text-purple-400 transition-colors duration-200" onClick={() => setIsOpen(true)}>Contact</li>
           </ul>
         </div>
 
@@ -52,7 +70,10 @@ const Footer = () => {
           <p>Bangalore</p>
         </div>
       </div>
+      {isOpen && <ContactUsPopup onClose={() => setIsOpen(false)} />}
     </footer>
+
+    
   );
 };
 

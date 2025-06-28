@@ -1,59 +1,68 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const dummyData = [
   {
     title: "Extended Patent Seeding Development",
-    content: "We identify gaps in current IP and provide tailored R&D roadmaps to seed future patents."
+    content: "From 'Art of the Possible' POCs to full-scale implementation."
   },
   {
-    title: "Prototype Acceleration",
-    content: "We rapidly build MVPs to validate market demand and iterate with real feedback."
-  },
-  {
-    title: "Innovation-as-a-Service",
-    content: "Leverage our cross-domain teams to solve deep-tech challenges as a service."
-  },
-  {
-    title: "Venture Co-Creation",
-    content: "We partner with institutions and inventors to spin out startups around IP."
-  },
-  {
-    title: "Startup Studio Programs",
-    content: "From hiring to product to go-to-market — we build companies from scratch."
+    title: "AI & IT Services",
+    content: "Covering Gen AI, full-stack development, cloud, big data, and emerging technologies."
   },
 ];
 
 const Venture = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleCard = (index:any) => {
+  const toggleCard = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center">
-      <div>
-        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] anybody bg-gradient-to-br from-white via-white/90 to-[#9b2f9f] bg-[length:250%] bg-[0%_0%] text-transparent bg-clip-text leading-tight">
-          Technology Trainning and <br /> Venture Studio
+    <motion.div
+      className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      {/* Heading */}
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] anybody bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+          From Vision to Victory
         </p>
-      </div>
+      </motion.div>
 
-      <div>
+      {/* Subheading */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <p className="font-medium text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto">
           We convert patented ideas and emerging concepts into real-world solutions.
         </p>
-      </div>
+      </motion.div>
 
+      {/* Cards */}
       <div className="flex flex-col w-full gap-3">
         {dummyData.map((item, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`w-full p-6 border rounded-[12px] cursor-pointer transition-all duration-300 ease-in-out ${
+            className={`w-full p-6 border rounded-[12px] cursor-pointer ${
               openIndex === index
-                ? "border-[#d38bdb] bg-gradient-to-br from-black via-[#2a0038] to-[#9b2f9f]/40"
+                ? "border-[#d38bdb] bg-gradient-to-br from-black to-[#9b2f9f]/40"
                 : "border-[#4B0056] bg-transparent"
             }`}
             onClick={() => toggleCard(index)}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2, ease: "easeInOut" }}
           >
             <div className="flex items-center justify-between">
               <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium text-white text-left">
@@ -66,16 +75,26 @@ const Venture = () => {
               />
             </div>
 
-            {/* Content - Expandable */}
-            {openIndex === index && (
-              <div className="mt-4 text-[14px] sm:text-[15px] text-[#e9c7f3] text-left transition-opacity duration-300 ease-in-out">
-                {item.content}
-              </div>
-            )}
-          </div>
+            <AnimatePresence initial={false}>
+              {openIndex === index && (
+                <motion.div
+                  key="content"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-4 text-[14px] sm:text-[15px] text-[#e9c7f3] text-left">
+                    {item.content}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import ContactUsPopup from "./Popup/ContactUs";
 
 const Navbar = () => {
@@ -8,20 +9,31 @@ const Navbar = () => {
   const [isServicesOpenMobile, setIsServicesOpenMobile] = useState(false); // Mobile dropdown
   const [isServicesHovered, setIsServicesHovered] = useState(false); // Desktop popover
 
-let hoverTimeout: NodeJS.Timeout | null = null;
+  const location = useLocation();
+  const hideTraining = ["/Ip", "/monitization", "/insights", "/infringement"].includes(location.pathname);
 
-const handleMouseEnter = () => {
-  if (hoverTimeout) clearTimeout(hoverTimeout);
-  setIsServicesHovered(true);
-};
+  function scrollToElementByIdWithOffset(id: any, offset = 100) {
+    setIsOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
 
-const handleMouseLeave = () => {
-  hoverTimeout = setTimeout(() => {
-    setIsServicesHovered(false);
-  }, 100); // 1 second delay
-};
+  let hoverTimeout: NodeJS.Timeout | null = null;
 
-  
+  const handleMouseEnter = () => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
+    setIsServicesHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout = setTimeout(() => {
+      setIsServicesHovered(false);
+    }, 500); // Half-second delay to prevent flicker
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -35,31 +47,34 @@ const handleMouseLeave = () => {
           <img src="/logo.png" alt="logo" />
         </div>
         <ul className="flex items-center gap-8 text-white alex relative">
-          <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Home</li>
-          <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Training</li>
-          
-          {/* Desktop popover on hover */}
-         <div
-  className="relative"
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
->
-  <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">
-    Services
-  </li>
-  {isServicesHovered && (
-    <div className="absolute top-full left-0 mt-2 w-64 bg-[#211824] border border-[#3a2d3c] rounded-lg shadow-lg py-4 z-50">
-      <ul className="flex flex-col px-4 gap-3 text-sm text-white text-start">
-        <li className="hover:text-[#DC7FF3] transition cursor-pointer">AI Patent Consulting</li>
-        <li className="hover:text-[#DC7FF3] transition cursor-pointer">Product Engineering</li>
-        <li className="hover:text-[#DC7FF3] transition cursor-pointer">IP & AI Training</li>
-      </ul>
-    </div>
-  )}
-</div>
+          <Link to="/" className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">
+            <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Home</li>
+          </Link>
 
+          {!hideTraining && (
+            <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Training</li>
+          )}
 
-          <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">Contact</li>
+          {/* Desktop Services Popover */}
+          <div
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <li className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">
+              Services
+            </li>
+            {isServicesHovered && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#211824] border border-[#3a2d3c] rounded-lg shadow-lg py-4 z-50">
+                <ul className="flex flex-col px-4 gap-3 text-sm text-white text-start">
+                  <Link to="/Ip" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Tech and Consulting</Link>
+                  <Link to="/monitization" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Monetization and Licensing</Link>
+                  <Link to="/insights" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Insights and Analytics</Link>
+                  <Link to="/infringement" className="hover:text-[#DC7FF3] transition cursor-pointer">Infringement Analysis and Enforcement</Link>
+                </ul>
+              </div>
+            )}
+          </div>
         </ul>
         <button
           onClick={() => setIsOpen2(true)}
@@ -71,10 +86,10 @@ const handleMouseLeave = () => {
       </div>
 
       {/* Mobile Top Bar */}
-      <div className="flex md:hidden items-center border-b border-[#2E2132] justify-between px-6 py-4">
-        <img src="/logo.png" className="h-10" alt="logo" />
+      <div className="flex md:hidden items-center border-b border-[#2E2132] justify-between px-6 py-3 md:py-4">
+        <img src="/logo.png" className="h-9" alt="logo" />
         <div className="cursor-pointer" onClick={() => setIsOpen(true)}>
-          <img src="/menu-icon.png" alt="menu" />
+          <img src="/menu-icon.png" alt="menu" className="h-6" />
         </div>
       </div>
 
@@ -103,16 +118,19 @@ const handleMouseLeave = () => {
         </div>
 
         <ul className="space-y-6 text-[16px]">
-          <li className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
+          <li onClick={() => scrollToElementByIdWithOffset("home")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
             <img src="/mission-icon.svg" className="w-6 h-6" alt="Home" />
             Home
           </li>
-          <li className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
-            <img src="/ecosystem-icon.svg" className="w-6 h-6" alt="Training" />
-            Training
-          </li>
 
-          {/* Services - Expandable in Sidebar */}
+          {!hideTraining && (
+            <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
+              <img src="/ecosystem-icon.svg" className="w-6 h-6" alt="Training" />
+              Training
+            </li>
+          )}
+
+          {/* Mobile Services Dropdown */}
           <li className="flex flex-col bg-[#483A4B] rounded-[5px]">
             <div
               className="flex items-center gap-3 p-3 cursor-pointer hover:bg-[#5b4960] transition"
@@ -124,9 +142,10 @@ const handleMouseLeave = () => {
             </div>
             {isServicesOpenMobile && (
               <ul className="px-5 pb-3 text-sm flex flex-col gap-3">
-                <li className="hover:text-[#DC7FF3] cursor-pointer transition  w-full">AI Patent Consulting</li>
-                <li className="hover:text-[#DC7FF3] cursor-pointer transition">Product Engineering</li>
-                <li className="hover:text-[#DC7FF3] cursor-pointer transition">IP & AI Training</li>
+                <Link to="/Ip" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Tech and Consulting</Link>
+                <Link to="/monitization" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Monetization and Licensing</Link>
+                <Link to="/insights" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Insights and Analytics</Link>
+                <Link to="/infringement" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Infringement Analysis and Enforcement</Link>
               </ul>
             )}
           </li>
