@@ -28,6 +28,16 @@ const Hero = () => {
           Welcome to THE<br /> ImagineX
         </p>
       </motion.div>
+            <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
+        <p className="font-medium text-[8px] sm:text-[12px] lg:text-[16px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+          THE HUMAN ENTERPRISE
+        </p>
+      </motion.div>
+
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

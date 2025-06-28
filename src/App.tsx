@@ -1,7 +1,7 @@
 
 import './App.css'
 import Home from './Pages/Home'
-
+import ScrollToTop from './Utils/ScrollToTop'
 import { Routes,Route } from 'react-router-dom'
 import { IPStrategyProcess } from './Pages/Service'
 import { Service1 } from './Pages/Service1'
@@ -13,7 +13,7 @@ function App() {
 
   return (
 <>
-
+<ScrollToTop/>
     <Routes>
       <Route path="/*" element={<Home />} />
       <Route path="/" element={<Home />} />

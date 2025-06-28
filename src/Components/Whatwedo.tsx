@@ -50,7 +50,7 @@ const Whatwedo = () => {
             OUR VISION
           </p>
           <p className="text-[16px] text-start font-light md:text-[24px] lg:text-[32px]">
-            Forging a Future of Intelligent Enterprise Transformation and Sustainable Growth
+            Building a Future of Smart Enterprise Transformation and Sustainable Growth
           </p>
         </motion.div>
       </motion.div>
@@ -74,7 +74,11 @@ const Whatwedo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.4 }}
           >
-            THE ImagineX is a future-focused innovation company driven by the mission to Empowering Humanity through Innovation and Technology (M-HIT). We help transform ideas into patents, and patents into real-world solutions. Our four core pillars—Patent Tech Consulting, Innovation & Product Development, Venture Studio, and Technology Training—enable startups, enterprises, and individuals to unlock IP value, build impactful products, and stay competitive in the age of AI. We deliver trusted, AI-powered patent and innovation solutions backed by expert teams, proven frameworks like xBrain™ AI and Patent Gym™, and a strong track record of IP success and product impact.
+            THE ImagineX is a future-focused innovation company driven by the mission to Empowering Humanity through Innovation and Technology (M-HIT). We help transform ideas into patents, and patents into real-world solutions.
+
+Our four core pillars—Patent Tech Consulting, Innovation & Product Development, and Technology Training—enable startups, enterprises, and individuals to unlock IP value, build impactful products, and stay competitive in the age of AI.
+
+We deliver trusted, AI-powered patent and innovation solutions backed by expert teams, proven frameworks like xBrain™ AI and Patent Gym™, and a strong track record of IP success and product impact..
           </motion.p>
         </motion.div>
       </motion.div>

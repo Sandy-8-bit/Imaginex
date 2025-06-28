@@ -16,8 +16,8 @@ const testimonials = [
   {
     quote:
       "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Identifying hidden IP in existing solutions and creating new innovations (powered by xBrain™ AI)",
-    title: "A Tale of Two Cities",
+    name: "Patent Gym™ – Patent Harvesting & Seeding",
+    title: "Identifying hidden IP in existing solutions and creating new innovations (powered by xBrain™ AI).",
     image: "/impact-icon.svg", // ✅ Replace with actual path or icon
   },
   {

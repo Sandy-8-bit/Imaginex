@@ -14,11 +14,13 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Innovation />
-      <Properties />
       <Purpose />
       <Whatwedo />
+      <Properties />
       <Innovators />
       <Venture/>
+
+
       <Footer />
     </div>
   )

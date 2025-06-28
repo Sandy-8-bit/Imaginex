@@ -3,12 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const dummyData = [
   {
-    title: "Extended Patent Seeding Development",
-    content: "From 'Art of the Possible' POCs to full-scale implementation."
+    title: "Employment Readiness Programs",
+    content: "For students and early-career professionals."
   },
   {
-    title: "AI & IT Services",
-    content: "Covering Gen AI, full-stack development, cloud, big data, and emerging technologies."
+    title: "AI Product Development Training",
+    content: "Hands-on, innovation-focused."
+  },  {
+    title: "Patent & IP Literacy Programs",
+    content: "For institutions, corporates, and individuals."
   },
 ];
 
@@ -34,20 +37,11 @@ const Venture = () => {
         transition={{ duration: 0.6 }}
       >
         <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
-          From Vision to Victory
+           Empowering the Innovators of <br /> Tomorrow
         </p>
       </motion.div>
 
-      {/* Subheading */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <p className="font-medium text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto">
-          We convert patented ideas and emerging concepts into real-world solutions.
-        </p>
-      </motion.div>
+
 
       {/* Cards */}
       <div className="flex flex-col w-full gap-3">

@@ -68,9 +68,11 @@ const Navbar = () => {
               <div className="absolute top-full left-0 mt-2 w-64 bg-[#211824] border border-[#3a2d3c] rounded-lg shadow-lg py-4 z-50">
                 <ul className="flex flex-col px-4 gap-3 text-sm text-white text-start">
                   <Link to="/Ip" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Tech and Consulting</Link>
-                  <Link to="/monitization" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Monetization and Licensing</Link>
-                  <Link to="/insights" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Insights and Analytics</Link>
                   <Link to="/infringement" className="hover:text-[#DC7FF3] transition cursor-pointer">Infringement Analysis and Enforcement</Link>
+                  <Link to="/insights" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Insights and Analytics</Link>
+                  <Link to="/monitization" className="hover:text-[#DC7FF3] transition cursor-pointer">Patent Monetization and Licensing</Link>
+
+
                 </ul>
               </div>
             )}
@@ -95,7 +97,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 bg-gradient-to-b from-[#0E0A0F] to-[#443149] h-full w-[60%] text-white alex p-6 z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 bg-gradient-to-b from-[#0E0A0F] to-[#443149] h-full w-[70%] text-white alex p-6 z-50 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -118,10 +120,12 @@ const Navbar = () => {
         </div>
 
         <ul className="space-y-6 text-[16px]">
-          <li onClick={() => scrollToElementByIdWithOffset("home")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
+                  <Link to="/" className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
+          <li  className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
             <img src="/mission-icon.svg" className="w-6 h-6" alt="Home" />
             Home
           </li>
+          </Link>
 
           {!hideTraining && (
             <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
@@ -143,9 +147,11 @@ const Navbar = () => {
             {isServicesOpenMobile && (
               <ul className="px-5 pb-3 text-sm flex flex-col gap-3">
                 <Link to="/Ip" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Tech and Consulting</Link>
-                <Link to="/monitization" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Monetization and Licensing</Link>
-                <Link to="/insights" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Insights and Analytics</Link>
                 <Link to="/infringement" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Infringement Analysis and Enforcement</Link>
+                <Link to="/insights" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Insights and Analytics</Link>
+                <Link to="/monitization" onClick={() => setIsOpen(false)} className="hover:text-[#DC7FF3] cursor-pointer transition">Patent Monetization and Licensing</Link>
+
+
               </ul>
             )}
           </li>

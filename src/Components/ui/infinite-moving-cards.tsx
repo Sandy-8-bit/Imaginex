@@ -76,7 +76,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             key={idx}
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl bg-gradient-to-b from-[#0E0A0F] to-[#211824] px-8 py-6 md:w-[450px]"
+            className="relative w-[350px] max-w-full shrink-0 rounded-2xl bg-gradient-to-b from-[#0E0A0F] to-[#211824] px-4 py-2 sm:px-8 sm:py-6 md:w-[450px]"
           >
             <blockquote>
               <div
@@ -91,10 +91,10 @@ export const InfiniteMovingCards = ({
                     className="w-6 h-6 mb-1"
                   />
                   <span className="flex flex-col gap-1">
-                    <span className="text-sm text-start leading-[1.6] font-normal text-white">
+                    <span className="text-[16px]  md:text-[20px] text-start leading-[1.6] font-normal text-white">
                       {item.name}
                     </span>
-                    <p className="text-neutral-500 text-start text-justify">
+                    <p className="text-neutral-500 text-[12px]  md:text-[16px]  text-start text-justify">
                       {item.title}
                     </p>
                   </span>

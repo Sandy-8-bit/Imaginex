@@ -5,16 +5,14 @@ import { Component } from "./ui/Comp";
 
 const data = [
   {
-    title: "Employment Readiness Programs",
+    title: <p>Extended Patent Seeding <br></br>Development</p>,
     img: "/impact-icon.svg",
+    p: <p>From 'Art of the Possible' POCs to <br></br> full-scale implementation.</p>,
   },
   {
-    title: "EAI Product Development Training",
+    title: "AI & IT Services",
     img: "/ecosystem-icon.svg",
-  },
-  {
-    title: "Patent & IP Literacy Programs",
-    img: "/mission-icon.svg",
+    p: <p>Covering Gen AI, full-stack development,<br></br> cloud, big data, and emerging technologies.</p>,
   },
 ];
 
@@ -56,22 +54,28 @@ const Innovators = () => {
         transition={{ duration: 0.6 }}
       >
 <p className="font-medium text-[20px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
-  Empowering the Innovators of <br /> Tomorrow
+   From Vision to Victory
 </p>
 
 
+        <p className="font-medium text-[10px] sm:text-[14px] lg:text-[16px] text-[#F8E9FE] mx-auto">
+          We convert patented ideas and emerging concepts into real-world solutions.
+        </p>
+      
       </motion.div>
+
+      
 
       {/* Good Div Animation */}
       <motion.div
         ref={cardsRef}
-        className="good flex w-full gap-2 flex-col md:flex-row md:gap-5"
+        className="good flex w-full gap-10 flex-col md:flex-row md:gap-5"
         initial={{ opacity: 0, y: 40 }}
         animate={cardsControls}
         transition={{ duration: 0.6 }}
       >
         {data.map((item, index) => (
-          <Component key={index} title={item.title} imgUrl={item.img} />
+          <Component key={index} p={item.p} title={item.title} imgUrl={item.img} />
         ))}
       </motion.div>
     </div>
