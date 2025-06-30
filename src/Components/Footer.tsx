@@ -81,14 +81,20 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div className="flex-1">
-          <ul className="flex flex-col gap-2 md:items-end">
-            <li>
+          <ul className="flex flex-col justify-end gap-2 md:items-end">
+            <li >
               <a
-                href="mailto:info@imaginex.com"
+                href="mailto:info@theimaginex.com"
                 className="hover:text-purple-400 transition-colors duration-200"
               >
-                info@imaginex.com
+                info@theimaginex.com
               </a>
+             <div className="mt-2">
+<div className="bg-[#AF2ECB] cursor-pointer justify-end w-6 flex p-1 rounded-[3px] hover:brightness-110 transition duration-200">
+  <img src="/linkedin.png" alt="linkedin" className="w-4 h-4" />
+</div>
+
+             </div>
             </li>
           </ul>
         </div>

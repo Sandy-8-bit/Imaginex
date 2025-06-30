@@ -5,6 +5,7 @@ import Innovators from '../Components/Inovators'
 import Navbar from '../Components/Navbar'
 import Properties from '../Components/Properties'
 import Purpose from '../Components/Purpose'
+import { TextRevealCardPreview } from '../Components/TextReveal'
 import Venture from '../Components/Venture'
 import Whatwedo from '../Components/Whatwedo'
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Innovation />
+      <TextRevealCardPreview />
       <Purpose />
       <Whatwedo />
       <Properties />
