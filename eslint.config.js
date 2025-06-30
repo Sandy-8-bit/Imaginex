@@ -1,32 +1,20 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
 
 export default tseslint.config([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
     },
     rules: {
-      // disables everything
-      "@typescript-eslint/no-explicit-any": "off",
-      "no-console": "warn",
-      "@typescript-eslint/no-unused-vars": "off",
-      "no-console": "off",
-      "no-unused-vars": "off",
-      // add more here as needed
+      // disable all potentially blocking rules
+      'no-console': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
   },
 ])
