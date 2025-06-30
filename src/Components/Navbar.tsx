@@ -45,6 +45,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center border-b border-[#2E2132] justify-between px-20 py-5 relative">
         <div>
           <img src="/logo.png" alt="logo" />
+          <p className="text-[8px] font-semibold">A Patent Intelligence & Innovation company</p>
         </div>
         <ul className="flex items-center gap-8 text-white alex relative">
           <Link to="/" className="cursor-pointer hover:text-[#DC7FF3] transition-colors duration-200">
@@ -120,12 +121,16 @@ const Navbar = () => {
         </div>
 
         <ul className="space-y-6 text-[16px]">
-                  <Link to="/" className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
-          <li  className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">
-            <img src="/mission-icon.svg" className="w-6 h-6" alt="Home" />
-            Home
-          </li>
-          </Link>
+<li>
+  <a
+    href="/"
+    className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition"
+  >
+    <img src="/mission-icon.svg" className="w-6 h-6" alt="Home" />
+    Home
+  </a>
+</li>
+
 
           {!hideTraining && (
             <li onClick={() => scrollToElementByIdWithOffset("inovators")} className="flex items-center gap-3 bg-[#483A4B] rounded-[5px] p-3 cursor-pointer hover:bg-[#5b4960] transition">

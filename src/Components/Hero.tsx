@@ -31,7 +31,7 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       id="home"
-      className="relative overflow-hidden w-full h-[85vh]  flex items-center justify-center"
+      className="relative overflow-hidden w-full h-[90vh]  flex items-center justify-center"
     >
       {/* ✅ Background: Particles */}
       <div className="absolute inset-0 z-0">
@@ -53,17 +53,6 @@ const Hero = () => {
 
       {/* ✅ Foreground content with reduced padding */}
       <div className="relative z-20 px-6 sm:px-[110px] lg:px-[220px] py-[40px] sm:py-[60px] lg:py-[80px] text-center flex flex-col gap-5 items-center justify-center">
-                <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-          <p className="font-medium text-[8px] sm:text-[12px] lg:text-[16px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
-            <span className="underline decoration-white underline-offset-[4px]">T</span>RUE{" "}
-            <span className="underline decoration-white underline-offset-[4px]">H</span>UMAN{" "}
-            <span className="underline decoration-white underline-offset-[4px]">E</span>NTERPRISE
-          </p>
-        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,8 +61,11 @@ const Hero = () => {
           <p className="font-semibold text-[32px] sm:text-[48px] lg:text-[72px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
             Welcome to<br /> THE ImagineX
           </p>
-          <p className=" text-[#F8E9FE] max-w-[800px] mx-auto">
-            A Patent Intelligence & Innovation company
+          <p className="font-medium text-[8px] sm:text-[12px] lg:text-[16px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+            <span className="underline decoration-white underline-offset-[4px]">T</span>RUE{" "}
+            <span className="underline decoration-white underline-offset-[4px]">H</span>UMAN{" "}
+            <span className="underline decoration-white underline-offset-[4px]">E</span>NTERPRISE
+            <span> - A Patent Intelligence & Innovation company</span>
           </p>
         </motion.div>
 

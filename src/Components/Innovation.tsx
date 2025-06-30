@@ -30,7 +30,7 @@ const data = [
   },
 ];
 
-const InnovationCard = ({
+ export const InnovationCard = ({
   item,
   index,
 }: {
@@ -62,31 +62,26 @@ const InnovationCard = ({
     mass: 0.5,
   });
 
-  // Derived dynamic shadow
+  // Derived shadow based on tilt
   const boxShadow = useTransform(rotateX, (rx: number) => {
     return `0px ${rx * 1.2}px 30px rgba(0, 0, 0, 0.25)`;
   });
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.7,
+          ease: [0.4, 0, 0.2, 1], // smooth ease
+          delay: index * 0.2,
+        },
+      });
     } else {
-      controls.start("hidden");
+      controls.start({ opacity: 0, y: 50 });
     }
-  }, [isInView, controls]);
-
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: index * 0.2,
-      },
-    },
-  };
+  }, [isInView, controls, index]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -113,9 +108,8 @@ const InnovationCard = ({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
+      initial={{ opacity: 0, y: 50 }}
       animate={controls}
-      variants={variants}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -149,13 +143,23 @@ const InnovationCard = ({
   );
 };
 
+
+
 const Innovation = () => {
   return (
     <div
       id="pillars"
       className="bg-[url('./grig-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center"
     >
-
+            <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="p-2 w-fit mx-auto flex justify-center hover:scale-105 transform duration-300 rounded-lg border border-[#9b2f9f] text-white text-[10px] sm:text-[14px] lg:text-[16px] bg-[#9b2f9f]/20 transition-all duration-300 hover:bg-[#9b2f9f]/20 hover:shadow-[0_0_10px_#9b2f9f]">
+         Our Vision
+        </p>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

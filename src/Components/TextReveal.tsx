@@ -11,6 +11,7 @@ export function TextRevealCardPreview() {
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
+      
       {/* Heading */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
@@ -18,7 +19,7 @@ export function TextRevealCardPreview() {
         transition={{ duration: 0.6 }}
       >
         <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
-          Powering Profits Through Patents
+          The Power of Patents
         </p>
       </motion.div>
 
@@ -29,10 +30,10 @@ export function TextRevealCardPreview() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <p className="font-medium text-[10px] sm:text-[14px] mb-2 md:mb-0 lg:text-[16px] text-[#F8E9FE] mx-auto">
-          Build. Patent. Launch. Lead – With THE ImagineX.
+          How industry leaders harness IP for long-term success - including but not limited to the below
         </p>
       </motion.div>
-      <div className="flex justify-between gap-5 flex-wrap  rounded-2xl w-full">
+      <div className="flex justify-between gap-5 flex-col md:flex-row flex-wrap  rounded-2xl w-full">
         <div className="flex flex-col flex-1 justify-end">
           <TextRevealCard
             text="Qualcomm"

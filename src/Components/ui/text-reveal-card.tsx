@@ -49,7 +49,7 @@ export const TextRevealCard = ({
           transition={{ duration: 0.4 }}
           className="absolute z-20 bg-gradient-to-b from-[#0E0A0F] to-[#211824] flex items-center justify-center"
         >
-          <p className="text-base sm:text-lg text-white">{revealText}</p>
+          <p className="text-base sm:text-sm text-white">{revealText}</p>
         </motion.div>
 
         {/* Base Text */}

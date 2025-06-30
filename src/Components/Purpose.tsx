@@ -6,16 +6,19 @@ const data = [
     name: "Patent Tech Consulting",
     description:
       "End-to-end, AI-driven IP discovery, drafting, valuation, monetization, and capability building.",
+    link:"patent"
   },
   {
     name: "Innovation & Product Development",
     description:
       "Translating patented ideas and emerging concepts into production-ready, scalable solutions.",
+       link:"inovators"
   },
   {
     name: "Technology Training & Enablement",
     description:
       "Future-proof training in AI, product engineering, and IP literacy for students, professionals, and CXOs.",
+      link:"training"
   },
 ];
 
@@ -23,6 +26,14 @@ const Purpose = () => {
   const controls = useAnimation();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const inView = useInView(containerRef, { amount: 0.3 });
+    function scrollToElementByIdWithOffset(id: any, offset = 100) {
+    const element = document.getElementById(id);
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+
 
   useEffect(() => {
     if (inView) {
@@ -45,6 +56,15 @@ const Purpose = () => {
   return (
     <div className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-5 justify-center items-center text-center">
       {/* Heading Animation */}
+            <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+  <p className="p-2 w-fit mx-auto flex justify-center hover:scale-105 transform duration-300 rounded-lg border border-[#9b2f9f] text-white text-[10px] sm:text-[14px] lg:text-[16px] bg-[#9b2f9f]/20 transition-all duration-300 hover:bg-[#9b2f9f]/20 hover:shadow-[0_0_10px_#9b2f9f]">
+    Our Core Pillars
+  </p>
+  </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -102,6 +122,7 @@ const Purpose = () => {
             <motion.div
               key={index}
               ref={cardRef}
+              onClick={() => scrollToElementByIdWithOffset(item.link)}
               onMouseMove={handleMouseMove}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

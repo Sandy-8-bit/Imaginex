@@ -46,9 +46,6 @@ const Whatwedo = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-[12px] text-start font-medium md:text-[12px] lg:text-[20px]">
-            OUR VISION
-          </p>
           <p className="text-[16px] text-start font-light md:text-[24px] lg:text-[32px]">
             Building a Future of Smart Enterprise Transformation and Sustainable Growth
           </p>

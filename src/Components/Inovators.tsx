@@ -47,13 +47,24 @@ const Innovators = () => {
     <div  id="inovators" className="bg-[url('/grid-bg.svg')] bg-cover bg-center px-5 py-[30px] sm:px-[110px] sm:py-[100px] lg:px-[80px] lg:py-[60px] flex flex-col gap-2 md:gap-5 justify-center items-center text-center">
       
       {/* Heading Animation */}
+            <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="p-2 w-fit mx-auto flex justify-center hover:scale-105 transform duration-300 rounded-lg border border-[#9b2f9f] text-white text-[10px] sm:text-[14px] lg:text-[16px] bg-[#9b2f9f]/20 transition-all duration-300 hover:bg-[#9b2f9f]/20 hover:shadow-[0_0_10px_#9b2f9f]">
+         Innovation & Product Development
+        </p>
+      </motion.div>
+
+
       <motion.div
         ref={headingRef}
         initial={{ opacity: 0, y: -20 }}
         animate={headingControls}
         transition={{ duration: 0.6 }}
       >
-<p className="font-medium text-[20px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+<p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
    From Vision to Victory
 </p>
 
@@ -69,7 +80,7 @@ const Innovators = () => {
       {/* Good Div Animation */}
       <motion.div
         ref={cardsRef}
-        className="good flex w-full gap-10 flex-col md:flex-row md:gap-5"
+        className="good flex w-full gap-10  mt-10 sm:mt-2 flex-col md:flex-row md:gap-5"
         initial={{ opacity: 0, y: 40 }}
         animate={cardsControls}
         transition={{ duration: 0.6 }}
