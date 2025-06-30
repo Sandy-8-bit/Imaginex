@@ -7,7 +7,6 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { TextRevealCard } from "./ui/text-reveal-card";
 
 const data = [
   {

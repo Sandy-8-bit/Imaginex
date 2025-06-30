@@ -4,9 +4,8 @@ import Particles from "../blocks/Backgrounds/Particles/Particles";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0.4);
-
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  console.log(position)
   const scrollToElementByIdWithOffset = (id: string, offset = 100) => {
     const element = document.getElementById(id);
     if (element) {

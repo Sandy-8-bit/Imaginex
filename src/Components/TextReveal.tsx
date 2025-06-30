@@ -11,14 +11,13 @@ export function TextRevealCardPreview() {
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
-      
       {/* Heading */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px]  bg-gradient-to-br from-white  via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
+        <p className="font-medium text-[24px] sm:text-[32px] lg:text-[48px] bg-gradient-to-br from-white via-white/80 to-[#9b2f9f] bg-clip-text text-transparent leading-tight">
           The Power of Patents
         </p>
       </motion.div>
@@ -33,45 +32,68 @@ export function TextRevealCardPreview() {
           How industry leaders harness IP for long-term success - including but not limited to the below
         </p>
       </motion.div>
-      <div className="flex justify-between gap-5 flex-col md:flex-row flex-wrap  rounded-2xl w-full">
+
+      <div className="flex justify-between gap-5 flex-col md:flex-row flex-wrap rounded-2xl w-full">
+        {/* Qualcomm */}
         <div className="flex flex-col flex-1 justify-end">
           <TextRevealCard
             text="Qualcomm"
             revealText="Around 60–70% of its profits come from patent licensing and royalty fees."
-          ></TextRevealCard>
+          />
           <div className="w-full flex justify-end mr-2">
-            <img
-              src="./link.png"
-              alt="link"
-              className=" hover:scale(105) cursor-pointer w-3 h-3 mt-2"
-            />
+            <a
+              href="https://www.latterly.org/qualcomm-business-model"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./link.png"
+                alt="link"
+                className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
+              />
+            </a>
           </div>
         </div>
-                <div className="flex flex-1 flex-col justify-end">
+
+        {/* ARM Holdings */}
+        <div className="flex flex-1 flex-col justify-end">
           <TextRevealCard
             text="ARM Holdings"
-            revealText="
- Generates over 90% of its revenue from licensing its patented chip architectures."
-          ></TextRevealCard>
+            revealText="Generates over 90% of its revenue from licensing its patented chip architectures."
+          />
           <div className="w-full flex justify-end mr-2">
-            <img
-              src="./link.png"
-              alt="link"
-              className=" hover:scale(105) cursor-pointer w-3 h-3 mt-2"
-            />
+            <a
+              href="https://www.sec.gov/Archives/edgar/data/1973239/000197323924000012/arm-20240331.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./link.png"
+                alt="link"
+                className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
+              />
+            </a>
           </div>
         </div>
+
+        {/* Dolby Laboratories */}
         <div className="flex flex-col flex-1 justify-end">
           <TextRevealCard
-            text="Dolby Laboratories:"
-            revealText="Earns about 90% of its revenue from licensing its patented audio and visual technologies."
-          ></TextRevealCard>
+            text="Dolby Laboratories"
+            revealText="Earns about 90% of its revenue from licensing its patented audio and visual technologies."
+          />
           <div className="w-full flex justify-end mr-2">
-            <img
-              src="./link.png"
-              alt="link"
-              className=" hover:scale(105) cursor-pointer w-3 h-3 mt-2"
-            />
+            <a
+              href="https://www.sec.gov/Archives/edgar/data/1308547/000162828025003175/dlb-20241227.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./link.png"
+                alt="link"
+                className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
+              />
+            </a>
           </div>
         </div>
       </div>
