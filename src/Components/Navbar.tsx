@@ -92,7 +92,7 @@ const Navbar = () => {
       <div className="flex md:hidden items-center border-b border-[#2E2132] justify-between px-6 py-3 md:py-4">
                          <div>
           <img src="/logo.png" alt="logo" height={9} />
-          <p className="text-[7px] text-white font-semibold">A Patent Intelligence & Innovation company</p>
+          <p className="text-[7.8px] text-white font-semibold">A Patent Intelligence & Innovation company</p>
         </div>
         <div className="cursor-pointer" onClick={() => setIsOpen(true)}>
           <img src="/menu-icon.png" alt="menu" className="h-6" />
@@ -108,7 +108,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center mb-8">
           <div>
             <img src="/logo.png" alt="logo" className="h-8" />
-            <p className="text-[5px] font-semibold">A Patent Intelligence & Innovation company</p>
+            <p className="text-[4.8px] font-semibold">A Patent Intelligence & Innovation company</p>
           </div>
           <button
             className="bg-[#B53ECF] rounded-[9px] p-1 cursor-pointer"

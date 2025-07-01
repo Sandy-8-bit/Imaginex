@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex-1">
           <div className="flex flex-col mb-4 ">
             <img src="/logo.png" alt="logo" className="= w-32" />
-            <p className="text-[5px] font-semibold">A Patent Intelligence & Innovation company</p>
+            <p className="text-[5.5px] font-semibold">A Patent Intelligence & Innovation company</p>
           </div>
           <p className="text-xs sm:text-sm text-gray-300">
             ImagineX is a True Human Enterprise — where ideas become patents, patents into products, and innovation serves humanity.
