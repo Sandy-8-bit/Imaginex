@@ -29,7 +29,7 @@ export function TextRevealCardPreview() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <p className="font-medium text-[10px] sm:text-[14px] mb-2 md:mb-0 lg:text-[16px] text-[#F8E9FE] mx-auto">
-          How industry leaders harness IP for long-term success - including but not limited to the below
+          How industry leaders harness IP for long-term success - including but not limited to the below *
         </p>
       </motion.div>
 
@@ -40,7 +40,7 @@ export function TextRevealCardPreview() {
             text="Qualcomm"
             revealText="Around 60–70% of its profits come from patent licensing and royalty fees."
           />
-          <div className="w-full flex justify-end mr-2">
+          {/* <div className="w-full flex justify-end mr-2">
             <a
               href="https://www.latterly.org/qualcomm-business-model"
               target="_blank"
@@ -52,29 +52,10 @@ export function TextRevealCardPreview() {
                 className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
               />
             </a>
-          </div>
+          </div> */}
         </div>
 
-        {/* ARM Holdings */}
-        <div className="flex flex-1 flex-col justify-end">
-          <TextRevealCard
-            text="ARM Holdings"
-            revealText="Generates over 90% of its revenue from licensing its patented chip architectures."
-          />
-          <div className="w-full flex justify-end mr-2">
-            <a
-              href="https://www.sec.gov/Archives/edgar/data/1973239/000197323924000012/arm-20240331.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./link.png"
-                alt="link"
-                className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
-              />
-            </a>
-          </div>
-        </div>
+
 
         {/* Dolby Laboratories */}
         <div className="flex flex-col flex-1 justify-end">
@@ -82,7 +63,7 @@ export function TextRevealCardPreview() {
             text="Dolby Laboratories"
             revealText="Earns about 90% of its revenue from licensing its patented audio and visual technologies."
           />
-          <div className="w-full flex justify-end mr-2">
+          {/* <div className="w-full flex justify-end mr-2">
             <a
               href="https://www.sec.gov/Archives/edgar/data/1308547/000162828025003175/dlb-20241227.htm"
               target="_blank"
@@ -94,7 +75,28 @@ export function TextRevealCardPreview() {
                 className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
               />
             </a>
-          </div>
+          </div> */}
+        </div>
+
+                {/* ARM Holdings */}
+        <div className="flex flex-1 flex-col justify-end">
+          <TextRevealCard
+            text="ARM Holdings"
+            revealText="Generates over 90% of its revenue from licensing its patented chip architectures."
+          />
+          {/* <div className="w-full flex justify-end mr-2">
+            <a
+              href="https://www.sec.gov/Archives/edgar/data/1973239/000197323924000012/arm-20240331.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./link.png"
+                alt="link"
+                className="hover:scale-140 transform duration-300 cursor-pointer w-3 h-3 mt-2"
+              />
+            </a>
+          </div> */}
         </div>
       </div>
     </motion.div>

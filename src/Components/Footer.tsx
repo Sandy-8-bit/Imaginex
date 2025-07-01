@@ -28,9 +28,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0E0A0F] text-white border-t border-[#2E2132] text-xs sm:text-sm">
-      <div className="flex flex-col md:flex-row justify-between gap-10 px-5 sm:px-20 py-10">
+      <div className="flex flex-col md:flex-row justify-between gap-10 pb-0 px-5 sm:px-20 py-10">
         {/* Logo & Description */}
-        <div className="flex-1">
+        <div className="flex-1 h-full flex flex-col justify-end">
           <div className="flex flex-col mb-4 ">
             <img src="/logo.png" alt="logo" className="= w-32" />
             <p className="text-[5.5px] font-semibold">A Patent Intelligence & Innovation company</p>
@@ -38,6 +38,7 @@ const Footer = () => {
           <p className="text-xs sm:text-sm text-gray-300">
             ImagineX is a True Human Enterprise — where ideas become patents, patents into products, and innovation serves humanity.
           </p>
+          <p className="text-[11px] mt-10 ">* Based on our internal research  through the internet</p>
         </div>
 
         {/* Navigation Links */}
